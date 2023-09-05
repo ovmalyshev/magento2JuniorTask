@@ -1,0 +1,21 @@
+<?php /** @var $block \Magento\Framework\View\Element\Template */?>
+
+<?php
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    $product = $objectManager->get('Magento\Framework\Registry')->registry('current_product');
+?>
+
+<div class="action primary" id="quick-buy" style="margin-bottom: 20px">
+    <span><?= $block->escapeHtml(__('Quick buy')) ?></span>
+</div>
+
+<div id="quick-buy-modal" style="margin-bottom: 20px">
+    <div class="modal-body-content">
+        <p>
+            <form action="<?= $block->getUrl('quickorder/index/buy') ?>" >
+                <input id="quickBuyPhoneNumber" type = "tel" name="phoneNumber" placeholder="+38-010-123-45-67" data-pattern="/^[\+]\d{2}[-]\d{3}[-]\d{3}[-]\d{2}[-]\d{2}/" required  action="<?= $block->getUrl('quick_orders/index/buy') ?>"/>
+                <input id="quickBuySku" type="hidden" name="pid" value=<?= $product->getSku() ?>/>
+            </form>
+        </p>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+{
+    "quick_orders": {
+        "column": {
+            "id": true,
+            "sku": true,
+            "phoneNumber": true,
+            "addedAt": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
