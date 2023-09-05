@@ -20,9 +20,9 @@ class Index extends \Magento\Backend\App\Action
         \Magento\Framework\View\Result\PageFactory $resultPageFactory,
         \Magento\Backend\App\Action\Context $context
     ) {
-        parent::__construct($context);
         $this->resultPageFactory = $resultPageFactory;
         $this->context = $context;
+        parent::__construct($context);
     }
 
     /**
@@ -32,7 +32,7 @@ class Index extends \Magento\Backend\App\Action
     {
         $resultPage = $this->resultPageFactory->create();
         $resultPage->setActiveMenu('Task_QuickOrder::menu');
-        $resultPage->getConfig()->getTitle()->prepend(__('Demo Menu'));
+        $resultPage->getConfig()->getTitle()->prepend(__('Quick orders'));
         return $resultPage;
     }
 

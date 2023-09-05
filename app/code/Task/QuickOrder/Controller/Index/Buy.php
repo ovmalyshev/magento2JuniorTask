@@ -56,7 +56,7 @@ class Buy extends Action implements HttpPostActionInterface
         $data = $this->getRequest()->getParams();
         $productId = $data['product'];
         $product = $this->productRepository->getById($productId);
-        if (empty($data['super_attribute'] ?? [])) {
+        if (!empty($data['super_attribute'] ?? [])) {
             $product = $this->configurable->getProductByAttributes($data['super_attribute'], $product);
         }
         $sku = $product->getSku();

@@ -10,11 +10,9 @@ class Orders extends Container
      */
     protected function _construct()
     {
-        $this->_controller = 'adminhtml_orders';
         $this->_blockGroup = 'Task_QuickOrder';
         $this->_headerText = __('Manage Orders');
-        $this->_addButtonLabel = __('Add New Post');
-
         parent::_construct();
+        $this->buttonList->remove('add'); //to remove add button
     }
 }
